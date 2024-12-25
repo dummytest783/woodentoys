@@ -1,0 +1,604 @@
+<html><head><base href="." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wooden Toys - Your Magical Toy Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #8a51c2; 
+      --secondary-color: #ffb347; 
+      --accent-color: #41d3bd; 
+      --background-color: #f7f0ff; 
+      --text-color: #2c1810; 
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      color: white !important;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--secondary-color) !important;
+    }
+
+    .hero-section {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
+    }
+
+    .toy-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .toy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .toy-card .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .media-container {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+
+    .media-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .media-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .media-toggle {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .category-filter {
+      margin: 20px 0;
+    }
+
+    .btn-outline-primary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .btn-outline-primary:hover, .btn-outline-primary.active {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      color: white;
+    }
+
+    .contact-info {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(138, 81, 194, 0.1);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: var(--background-color);
+    }
+
+    .contact-item i {
+      margin-right: 15px;
+      color: var(--primary-color);
+      width: 24px;
+      font-size: 1.2em;
+    }
+
+    .social-link {
+      color: var(--primary-color);
+      font-size: 28px;
+      margin: 0 15px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-link:hover {
+      transform: scale(1.1);
+      color: var(--secondary-color);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px 0;
+      margin-top: 50px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-details {
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .lead {
+      font-size: 1.3rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">WoodenToys</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#inventory">Inventory</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <h1>Welcome to Wooden Toys Land</h1>
+      <p class="lead">Discover the magic of childhood with our amazing collection of toys!</p>
+    </div>
+  </section>
+
+  <!-- Inventory Section -->
+  <section id="inventory" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Toys</h2>
+      
+      <!-- Category Filter -->
+      <div class="category-filter">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-primary active" data-category="all">All</button>
+          <button type="button" class="btn btn-outline-primary" data-category="educational">Educational</button>
+          <button type="button" class="btn btn-outline-primary" data-category="puzzle">Puzzle</button>
+          <button type="button" class="btn btn-outline-primary" data-category="games">Games</button>
+        </div>
+      </div>
+
+      <!-- Toy Grid -->
+      <div class="row" id="toyGrid">
+        <!-- Toy cards will be dynamically added here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="contact-info">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p class="text-center mb-4">We'd love to hear from you! Reach out to us through any of the following channels:</p>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <h5 class="mb-1">Phone</h5>
+                  <p class="mb-0"><a href="tel:+91 90990 66952" class="text-decoration-none">+91 9099066952</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <h5 class="mb-1">WhatsApp</h5>
+                  <p class="mb-0"><a href="https://wa.me/9099066952" class="text-decoration-none">+91 90990 66952</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <h5 class="mb-3">Follow Us on Social Media</h5>
+              <a href="https://www.instagram.com/woodentoys.montessori/profilecard/?igsh=MW9uMmJoY2ZmeHg1NQ==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://facebook.com/toyland" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+
+            <div class="mt-4">
+              <h5 class="text-center mb-3">Store Hours</h5>
+              <p class="text-center">
+                For online delivery reach out to us anytime through phone or WhatsApp.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container text-center">
+      <p>&copy; 2024 Woodentoys. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Sample toy data (replace with your actual data)
+    const toys = [
+    {
+        "id": 1,
+        "name": "Numbers & Letters Puzzle",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/1.jpeg",
+        "video": "./assets/1.mp4"
+    },
+    {
+        "id": 2,
+        "name": "Fish Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/2.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "Helicopter Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/3.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Penguin Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/4.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "Rabbit Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/5.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "Bee Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/6.jpeg"
+    },
+    {
+        "id": 7,
+        "name": "Dog Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/7.jpeg"
+    },
+    {
+        "id": 8,
+        "name": "Tortoise Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/8.jpeg"
+    },
+    {
+        "id": 9,
+        "name": "Astronaut Puzzle",
+        "price": 175,
+        "category": "puzzle",
+        "image": "./assets/9.jpeg"
+    },
+    {
+        "id": 10,
+        "name": "Color Game",
+        "price": 400,
+        "category": "educational",
+        "image": "./assets/10.jpeg",
+        "video": "./assets/10.mp4"
+    },
+    {
+        "id": 11,
+        "name": "Hindi Letters",
+        "price": 365,
+        "category": "educational",
+        "image": "./assets/11.jpeg"
+    },
+    {
+        "id": 12,
+        "name": "Letters, Numbers, Shapes",
+        "price": 365,
+        "category": "educational",
+        "image": "./assets/12.jpeg"
+    },
+    {
+        "id": 15,
+        "name": "Guitar",
+        "price": 165,
+        "category": "educational",
+        "image": "./assets/15.jpeg",
+        "video": "./assets/15.mp4"
+    },
+    {
+        "id": 16,
+        "name": "Numbers",
+        "price": 175,
+        "category": "educational",
+        "image": "./assets/16.jpeg"
+    },
+    {
+        "id": 17,
+        "name": "Human Body Parts",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/17.jpeg"
+    },
+    {
+        "id": 18,
+        "name": "Animals",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/18.jpeg"
+    },
+    {
+        "id": 19,
+        "name": "Animals",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/19.jpeg"
+    },
+    {
+        "id": 20,
+        "name": "Numbers & Letters Puzzle",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/20.jpeg"
+    },
+    {
+        "id": 19,
+        "name": "Numbers & Letters Puzzle",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/19.jpeg"
+    },
+    {
+        "id": 20,
+        "name": "Numbers & Letters Puzzle",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/20.jpeg"
+    },
+    {
+        "id": 21,
+        "name": "Numbers & Letters Puzzle",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/21.jpeg"
+    },
+    {
+        "id": 22,
+        "name": "Numbers & Letters Puzzle",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/22.jpeg"
+    },
+    {
+        "id": 23,
+        "name": "Musical Instruments",
+        "price": 95,
+        "category": "games",
+        "image": "./assets/23.jpeg"
+    },
+    {
+        "id": 24,
+        "name": "Fruits",
+        "price": 375,
+        "category": "educational",
+        "image": "./assets/24.jpeg"
+    },
+    {
+        "id": 25,
+        "name": "Letters Train",
+        "price": 395,
+        "category": "educational",
+        "image": "./assets/25.jpeg"
+    },
+    {
+        "id": 26,
+        "name": "Musical Instruments",
+        "price": 375,
+        "category": "games",
+        "image": "./assets/26.jpeg"
+    },
+    {
+        "id": 27,
+        "name": "Flying Car",
+        "price": 750,
+        "category": "games",
+        "image": "./assets/27.jpeg",
+        "video": "./assets/27.mp4"
+    },
+    {
+        "id": 28,
+        "name": "Windup Helicoptor Race",
+        "price": 260,
+        "category": "games",
+        "image": "./assets/28.jpeg",
+        "video": "./assets/28.mp4"
+    },
+    {
+        "id": 29,
+        "name": "Giraffe Puzzle",
+        "price": 320,
+        "category": "puzzle",
+        "image": "./assets/29.jpeg"
+    },
+    {
+        "id": 30,
+        "name": "Cat Puzzle",
+        "price": 320,
+        "category": "puzzle",
+        "image": "./assets/30.jpeg"
+    },
+    {
+        "id": 31,
+        "name": "Elephant Puzzle",
+        "price": 320,
+        "category": "puzzle",
+        "image": "./assets/31.jpeg"
+    },
+    {
+        "id": 32,
+        "name": "Train Puzzle",
+        "price": 320,
+        "category": "puzzle",
+        "image": "./assets/32.jpeg"
+    },
+    {
+        "id": 33,
+        "name": "Helicopter Puzzle",
+        "price": 320,
+        "category": "puzzle",
+        "image": "./assets/33.jpeg"
+    },
+    {
+        "id": 34,
+        "name": "Butterfly Puzzle",
+        "price": 320,
+        "category": "puzzle",
+        "image": "./assets/34.jpeg"
+    }
+];
+
+    // Function to create toy cards
+    function createToyCard(toy) {
+      return `
+        <div class="col-md-4 toy-card" data-category="${toy.category}">
+          <div class="card">
+            <div class="media-container">
+              <img src="${toy.image}" class="card-img-top" alt="${toy.name}" id="img-${toy.id}">
+              ${
+                toy.video
+                  ? `<video src="${toy.video}" class="card-img-top" id="video-${toy.id}" style="display: none;" loop>
+                      Your browser does not support the video tag.
+                    </video>
+                    <button class="media-toggle" onclick="toggleMedia(${toy.id})">
+                      <i class="fas fa-play"></i>
+                    </button>`
+                  : ""
+              }
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">${toy.name}</h5>
+              <p class="card-text">$${toy.price}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+
+    // Function to toggle between image and video
+    function toggleMedia(toyId) {
+      const img = document.getElementById(`img-${toyId}`);
+      const video = document.getElementById(`video-${toyId}`);
+      const button = video.parentElement.querySelector('.media-toggle i');
+
+      if (video.style.display === 'none') {
+        img.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+        button.classList.remove('fa-play');
+        button.classList.add('fa-pause');
+      } else {
+        video.style.display = 'none';
+        video.pause();
+        img.style.display = 'block';
+        button.classList.remove('fa-pause');
+        button.classList.add('fa-play');
+      }
+    }
+
+    // Function to filter toys
+    function filterToys(category) {
+      const cards = document.querySelectorAll('.toy-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Initialize toy grid
+    document.addEventListener('DOMContentLoaded', () => {
+      const toyGrid = document.getElementById('toyGrid');
+      toys.forEach(toy => {
+        toyGrid.innerHTML += createToyCard(toy);
+      });
+
+      // Add filter functionality
+      const filterButtons = document.querySelectorAll('.category-filter button');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          filterToys(e.target.dataset.category);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
